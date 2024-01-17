@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <script src="./assets/scripts/contact-list.js" defer></script>
+
+    <title>Contact List</title>
+</head>
+<body class="w-full h-screen flex flex-col justify-center items-center bg-slate-600">
+    <div class="relative min-w-72 min-h-96 max-w-[425px] max-h-[600px] bg-zinc-300 px-2 flex flex-col flex-grow justify-between items-center rounded-lg shadow-sm shadow-black">
+        <div class="py-3">
+            <h1 class="font-bold">Contatos</h1>
+        </div>
+
+        <hr class="h-px border-0 bg-slate-200"/>
+
+        <table class="w-full h-4/5 absolute top-10 left-1 flex flex-col flex-grow items-center justify-start gap-0">
+            <thead class="w-full h-auto">
+                <tr class="w-full font-semibold flex flex-row items-center justify-between p-1">
+                    <td class="w-2/5">Nome</td>
+                    <td class="w-2/5">Telefone</td>
+                    <td class="w-1/5"></td>
+                </tr>
+            </thead>
+            <tbody id="table-contacts" class="w-full h-4/5 overflow-auto scroll-auto">
+                <tr id="contact-template" class="w-full h-auto flex flex-row items-center justify-between p-1">
+                    <td id="contact-name" class="w-2/5">Name</td>
+                    <td id="contact-tel" class="w-2/5">91988779988</td>
+                    <td class="w-1/5 flex flex-row justify-center items-center gap-0.5">
+                        <button id="edit-button" type="button" class="w-4 h-4">
+                            <img src="./assets/images/pencil.png" alt="pencil">
+                        </button>
+                        <button id="delete-button" type="button" class="w-4 h-4">
+                            <img src="./assets/images/trash.png" alt="trash">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button id="button-add-contact" type="button" class="w-12 h-12 bg-blue-500 absolute bottom-3 right-3 w-1/3 rounded-full text-slate-50 shadow-sm shadow-black hover:opacity-80	">
+                +
+            </button>
+        </div>
+        <div id="contact-menu" class="absolute hidden w-full h-full flex flex-col justify-center items-center bg-gray-600 opacity-80">
+            <form  class="w-4/5 h-1/2 max-h-48 flex flex-col gap-2 shadow-sm shadow-black bg-gray-400 p-2 rounded-lg">
+                <div class="flex flex-col gap-0.5">
+                    <label for="form-contact-name">Nome:</label>
+                    <input class="shadow-sm shadow-black rounded-lg px-1" type="text" name="contactName" id="form-contact-name" placeholder="Fulano Beltrano">
+                </div>
+                <div class="flex flex-col gap-0.5">
+                    <label for="form-contact-tel">Telefone:</label>
+                    <input class="shadow-sm shadow-black rounded-lg px-1" type="tel" name="contactTel" id="form-contact-tel" placeholder="9-8876-1234">
+                </div>
+                <div class="flex flex-row items-center justify-between px-3">
+                    <button id="button-cancel" class="hidden mt-2 p-1 shadow-sm shadow-black bg-slate-200 rounded-sm hover:bg-slate-400 hover:opacity-80" type="button">Cancelar</button>
+                    <button id="button-save" class="hidden mt-2 p-1 shadow-sm shadow-black bg-slate-200 rounded-sm hover:bg-slate-400  hover:opacity-80" type="button">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
